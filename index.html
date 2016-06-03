@@ -1,25 +1,398 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="de">
 
-<div class="home">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML-Flyer : Fit 4 Angular 2</title>
 
-  <div>I'm fit 4 jekyll! </div>
 
-  <h1 class="page-heading">Posts</h1>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <link rel="apple-touch-icon" type="image/vnd.microsoft.icon" href="http://mosst.de/assets/images/e/favicon-aa3a11ce.jpg" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="http://mosst.de/favicon.ico" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://mosst.de/favicon.ico" />
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <style>
+        body,
+        li {
+            font-family: Ubuntu, sans-serif;
+            /*font-family: 'Source+Sans+Pro:300', italic;*/
+            font-weight: 100;
+        }
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        a:link,
+        a:visited {
+            color: grey;
+        }
 
-</div>
+        @media print {
+            body,
+            li {
+                font-family: 'Source+Sans+Pro:300', italic;
+                font-weight: 100;
+            }
+            h1.grey {
+                color: grey;
+                font-family: 'Source+Sans+Pro:600', italic;
+                font-size: 16px;
+            }
+            .blocksatz {
+                text-align: justify;
+                font-size: 12px;
+            }
+            .headTraining {
+                font: 3.1em/180% Verdana;
+            }
+            .headTitle {
+                font: 4.1em/180% Verdana;
+            }
+            .headDate {
+                text-decoration: underline;
+            }
+            td {
+                font-size: 12px;
+            }
+            ul {
+                font-size: 12px;
+            }
+            .hideByPrint {
+                display: none;
+            }
+            .logo-div {
+                margin-top: 145px;
+            }
+        }
+
+        @media screen,
+        handheld {
+            h1.grey {
+                color: grey;
+                font-family: 'Source+Sans+Pro:600', italic;
+            }
+            .blocksatz {
+                text-align: justify;
+                font-size: 14px;
+            }
+            .headTraining {
+                font: 4em/180% Verdana;
+            }
+            .headTitle {
+                font: 6em/180% Verdana;
+            }
+            .headDate {
+                text-decoration: underline;
+            }
+            .showByPrint {
+                display: none;
+            }
+            .logo-div {
+                margin-top: -20px;
+            }
+        }
+
+        .logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 80px;
+        }
+
+        .gedreht {
+            width: 800px;
+            height: 800px;
+            text-align: center;
+            -moz-transform: rotate(-90deg);
+            /* Firefox 3.6 Firefox 4 */
+            -webkit-transform: rotate(-90deg);
+            /* Safari */
+            -o-transform: rotate(-90deg);
+            /* Opera */
+            -ms-transform: rotate(-90deg);
+            /* IE9 */
+            transform: rotate(-90deg);
+            /* W3C */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="row center-block">
+        <div class="col-sm-4">
+            <div class="gedreht hidden-sm hidden-xs">
+                <div class="headTraining">Weekend Training</div>
+                <div class="headTitle">Fit 4 Angular 2</div>
+                <div class="headDate">24.09.-25.09.2016
+                    <!-- 31.01.-01.02.2015-->
+                </div>
+                <div class="headPreis">Frühbucherpreis: 950€ all incl.*</div>
+            </div>
+            <div class="hidden-md hidden-lg" style="text-align: center; margin-bottom:80px;">
+                <div style="font:3em/180% Verdana;">Weekend Training</div>
+                <div style="font:5.1em/180% Verdana;">Fit 4 Angular 2</div>
+                <div style="text-decoration:underline;">24.09.-25.09.2016
+                    <!-- 31.01.-01.02.2015-->
+                </div>
+                <div style="">Frühbucherpreis: 950€ all incl.*</div>
+            </div>
+
+            <div class="logo-div">
+                <img class="logo" src="./img/mosst.png">
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+            <h1 class="grey">Angular 2</h1>
+
+            <div class="blocksatz">
+                Liferay Spezialisten sind heute vom Softwareentwicklermarkt nicht wegzudenken. Wir geben Ihnen die Möglichkeit, ihre Entwickler preiswert und vor allem qualifiziert schulen zu lassen. Das Angular 2 ist ein lauffähiges Portal aber auch in erster Linie
+                ein Basis-Framework, um ein kundenzugeschnittenes Portal umzusetzen. Liferay wird in Form einer Open-Source Plattform auf Java-Basis entwickelt und setzt die Portalstandards JSR-168 und JSR-286 um. Als Portal-Server kann Liferay auf den
+                meisten gängigen JEE Application-Servern sowie Servlet-Containern wie Tomcat oder Jetty installiert werden. Zusammen mit Standard Portlet Technologien bietet das Liferay-Portal von Haus aus umfangreiche Features wie ein Content Management
+                System, eine Social Plattform und viele weitere Komponenten, die das Einsatzszenario von Liferay signifikant erweitern. Dank der Zusammenführung von Innovation und Qualität, die in den letzten Jahren in die Technologie eingeflossen sind,
+                wird Liferay zunehmend in Großunternehmen eingesetzt. Durch die steigende Popularität wurde Liferay in Gartner's Magic Quadrant aufgenommen, was wiederum für die weitere Verbreitung des Liferay-Portals sorgt.
+            </div>
+            <h1 class="grey">Trainingsthemen</h1>
+
+            <div>
+                <ul>
+                    <li>Einsatzszenarien für Portale - insbesondere Liferay</li>
+                    <li>Angular 2 aufsetzen</li>
+                    <li>Entwicklungsumgebung einrichten</li>
+                    <li>Out-of-the-Box Module im Überblick</li>
+                    <li>Liferay CMS (Content Management System)</li>
+                    <li>Konfiguration mit Hilfe von Liferay Property-Dateien</li>
+                    <li>Entwicklung von Liferay-Themes & -Layouts</li>
+                    <li>Entwicklung von Liferay-Portlets</li>
+                    <li>Liferay Build & Deployment</li>
+                    <li>Überblick über die Liferay-Administration</li>
+                    <li>Einsatz von Liferay-Custom-Fields</li>
+                    <li>Entwicklung von Liferay-Hooks</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <h1 class="grey">Trainer</h1>
+
+            <div>
+                <img src="https://avatars1.githubusercontent.com/u/555817?v=3" width="200" height="200" style="margin-bottom: 5px;">
+            </div>
+            <div class="blocksatz">
+                Dipl. Inf. Michael Seemann - <a href="http://stackoverflow.com/users/2688545/michael">Top Angular
+            Stackoverflow Answerer</a>
+                </br/> Michael ist Diplom Wirtschaftsinformatiker. Neben seiner freiberuflichen Tätigkeit als Software-Architekt und –Entwickler für Webanwendungen ist er gelegentlich als Fachautor tätig und entwickelt Apps für iOS. Seine Maxime: komplexe Probleme
+                erfordern simple Lösungen. Abschalten kann er am besten auf Reisen und bei seinem Hobby der Digitalfotografie.
+            </div>
+
+            <h1 class="grey">Ort</h1>
+
+            <div class="blocksatz">
+                Hotel im Kölner Raum ab 4 <span class="glyphicon glyphicon-star"></span>.
+                <br/> Übernachtung und Verpflegung sind im Preis enthalten.
+                <br/> Detaillierte Angaben werden in Abhängigkeit von der Teilnehmerzahl ca. einen Monat vor dem Training bekannt gegeben.
+            </div>
+        </div>
+    </div>
+    <div class="row center-block">
+        <div class="col-sm-4">
+            <h1 class="grey">Tag 1</h1>
+            <table class="table">
+                <th>Zeit</th>
+                <th></th>
+                <tr>
+                    <td width="20">9:00</td>
+                    <td>Anreise</td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td>Schulungsbeginn</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Einsatzszenarien für Portale - insbesondere Liferay</li>
+                            <li>Angular 2 und Entwicklungsumgebung einrichten</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11:30</td>
+                    <td>Kaffee & Kuchen</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Out-of-the-Box Module im Überblick</li>
+                            <li>Liferay CMS</li>
+                            <li>Konfiguration mit Hilfe von Property Dateien</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13:00</td>
+                    <td>Mittag </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Entwicklung von Liferay-Portlets (Teil 1)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17:00</td>
+                    <td>Kaffee & Kuchen</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Liferay Build und Deployment</li>
+                            <li>Entwicklung von Liferay-Themes und</li>
+                            <li>Liferay-Layouts</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>19:00</td>
+                    <td>Abendessen</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Wohlfühlen in entspannter Atmosphäre am Kamin
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-sm-4">
+            <h1 class="grey">Tag 2</h1>
+            <table class="table">
+                <th>Zeit</th>
+                <th></th>
+                <tr>
+                    <td width="20">8:00</td>
+                    <td>Frühstück</td>
+                </tr>
+                <tr>
+                    <td>9:00</td>
+                    <td>Schulungsbeginn</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Überblick über die Liferay Administration</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>Kaffee & Kuchen</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Entwicklung von Liferay Portlets (Teil 2)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>Mittag</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Entwicklung von Liferay-Portlets (Teil 3)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:30</td>
+                    <td>Kaffee & Kuchen</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Einsatz von Liferay–Custom-Fields</li>
+                            <li>Überblick über weitere Liferay Komponenten</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td>Abreise</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Wir wünschen allen Teilnehmern eine gute Heimreise!
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="col-sm-4">
+
+            <h1 class="grey">Voraussetzungen</h1>
+
+            <ul>
+                <li>Basis Java Kenntnisse</li>
+                <li>Notebook mit min. 4GB RAM & WiFi</li>
+                <li>Grundkenntnisse HTML, CSS, JavaScript</li>
+                <li>Eclipse</li>
+            </ul>
+
+
+            <h1 class="grey">Preis & Anmeldung</h1>
+
+            <div class="blocksatz">
+                Frühbucher: 950€ all incl.* bis 21.07.2016</br>
+                Normal: 1050€ all incl.*</br>
+                <br/> Anmeldung per Tel oder per Email:
+                <br/>
+                <a href="./2014-11-22/Anmeldeformular-2014-11-22.pdf">Anmeldeformular</a>
+                <br/>
+                <span class="glyphicon glyphicon-envelope"></span> <a class="hideByPrint" href="mailto:info@mosst.de">info@mosst.de</a>
+                <span class="showByPrint">info@mosst.de</span>
+                <br/>
+                <span class="glyphicon glyphicon-earphone"></span>&nbsp;0177-2924796
+                <br/>
+                <span class="glyphicon glyphicon-print"></span>&nbsp;0531-38824923
+                <br/>
+                <br/> MOSST, Mark Stein
+
+                <br/> Comeniusstr. 9
+                <br/> 38102 Braunschweig
+                <br/>
+                <br/>
+                <a class="hideByPrint" href="http://www.mosst.de">www.mosst.de</a>
+                <span class="showByPrint">www.mosst.de</span>
+                <br/>
+                <br/>
+
+                <div style="font-size:x-small;">
+                    * zzgl. 19% MwSt
+                    <br/> Im Preis sind folgende Leistungen inkludiert: Zweitätiges Liferay Basic Training, Hotelübernachtung mit Frühstück, 2 x Mittagessen inkl. ein Getränk, Abendessen inkl. ein Getränk, 4 x Kaffee & Kuchen, Getränke im Seminarraum unbegrenzt.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
